@@ -1,0 +1,914 @@
+/* ==========================================
+            RESET
+========================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow: hidden;
+
+  font-family: "Poppins", sans-serif;
+
+  background: linear-gradient(135deg, #ffd1dc, #ff9eb5, #ffc7d6);
+
+  background-size: 400% 400%;
+
+  animation: bgAnimation 15s ease infinite;
+
+  height: 100vh;
+
+  color: white;
+}
+
+/* Animated Background */
+
+@keyframes bgAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ==========================================
+            HEART BACKGROUND
+========================================== */
+
+#heartContainer {
+  position: fixed;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+.heart {
+  position: absolute;
+
+  bottom: -50px;
+
+  color: #ff2d75;
+
+  opacity: 0.4;
+
+  animation: floatHeart linear forwards;
+}
+
+@keyframes floatHeart {
+  from {
+    transform: translateY(0) rotate(0deg);
+
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.5;
+  }
+
+  to {
+    transform: translateY(-120vh) rotate(360deg);
+
+    opacity: 0;
+  }
+}
+
+/* ==========================================
+            COMMON SECTIONS
+========================================== */
+
+section {
+  position: fixed;
+
+  inset: 0;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  flex-direction: column;
+}
+
+/* Only proposal is visible initially */
+
+#proposalPage {
+  z-index: 10;
+}
+
+#introScene,
+#togetherScene,
+#letterSection,
+#dateSection,
+#gallerySection,
+#endingSection {
+  display: none;
+}
+
+/* ==========================================
+            GLASS CARD
+========================================== */
+
+.glassCard {
+  width: 90%;
+
+  max-width: 700px;
+
+  padding: 40px;
+
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.18);
+
+  backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  border-radius: 35px;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+
+  animation: cardFloat 5s ease-in-out infinite;
+}
+
+@keyframes cardFloat {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================
+            TEXT
+========================================== */
+
+.glassCard h1 {
+  font-size: 3rem;
+
+  font-family: "Great Vibes", cursive;
+
+  color: white;
+
+  text-shadow: 0 0 20px hotpink;
+}
+
+.glassCard p {
+  margin-top: 15px;
+
+  font-size: 18px;
+
+  color: white;
+}
+
+.glassCard h2 {
+  margin-top: 25px;
+
+  font-size: 2rem;
+
+  line-height: 1.4;
+}
+
+/* ==========================================
+            MAIN IMAGE
+========================================== */
+
+.proposalImage {
+  width: 320px;
+
+  margin: 30px auto;
+
+  display: block;
+
+  border-radius: 25px;
+
+  border: 5px solid white;
+
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+
+  transition: 0.5s;
+}
+
+.proposalImage:hover {
+  transform: scale(1.06);
+}
+/* ==========================================
+            BUTTONS
+========================================== */
+
+.buttons {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 30px;
+
+  margin-top: 35px;
+
+  position: relative;
+
+  height: 70px;
+}
+
+button {
+  padding: 16px 38px;
+
+  border: none;
+
+  border-radius: 40px;
+
+  cursor: pointer;
+
+  font-size: 18px;
+
+  font-weight: 600;
+
+  transition: 0.35s;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  transform: translateY(-4px) scale(1.05);
+}
+
+#yesBtn {
+  background: #ff2d75;
+
+  color: white;
+
+  animation: pulse 1.8s infinite;
+}
+
+#yesBtn:hover {
+  background: #ff0d5d;
+}
+
+#noBtn {
+  background: white;
+
+  color: #ff2d75;
+
+  position: relative;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ==========================================
+            INTRO SCENE
+========================================== */
+
+#introScene {
+  background: rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(12px);
+
+  overflow: hidden;
+}
+
+/* ==========================================
+            INTRO IMAGES
+========================================== */
+
+#me,
+#barasha {
+  position: absolute;
+
+  width: 230px;
+
+  height: 230px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  border: 6px solid white;
+
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+
+  transition: 2.2s ease-in-out;
+}
+
+#me {
+  left: -300px;
+}
+
+#barasha {
+  right: -300px;
+}
+
+/* ==========================================
+        COLLISION HEART
+========================================== */
+
+#collisionHeart {
+  position: absolute;
+
+  left: 50%;
+
+  top: 50%;
+
+  transform: translate(-50%, -50%) scale(0);
+
+  font-size: 90px;
+
+  opacity: 0;
+
+  transition: 0.8s;
+
+  text-shadow: 0 0 30px hotpink;
+}
+
+/* ==========================================
+            TOGETHER SCENE
+========================================== */
+
+#togetherScene {
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(10px);
+}
+
+#together {
+  position: absolute;
+
+  width: 250px;
+
+  opacity: 0;
+
+  left: 50%;
+
+  top: 50%;
+
+  transform: translate(-50%, -50%) scale(0.1);
+
+  border-radius: 30px;
+
+  border: 8px solid white;
+
+  box-shadow: 0 0 70px hotpink;
+}
+
+#togetherScene h1 {
+  margin-top: 35px;
+
+  font-size: 2.6rem;
+
+  font-family: "Great Vibes", cursive;
+
+  color: white;
+}
+
+#togetherScene h2 {
+  margin-top: 12px;
+
+  font-size: 1.7rem;
+
+  color: white;
+}
+
+/* ==========================================
+            FADE ANIMATION
+========================================== */
+
+.fadeIn {
+  animation: fadeIn 0.8s forwards;
+}
+
+.fadeOut {
+  animation: fadeOut 0.8s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+/* ==========================================
+            LOVE LETTER
+========================================== */
+
+#letterSection {
+  background: rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(10px);
+}
+
+.letterCard {
+  width: 90%;
+
+  max-width: 750px;
+
+  background: white;
+
+  color: #444;
+
+  padding: 45px;
+
+  border-radius: 30px;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+
+  text-align: center;
+
+  animation: popUp 0.8s;
+}
+
+.letterCard h1 {
+  color: #ff2d75;
+
+  font-family: "Great Vibes", cursive;
+
+  font-size: 3rem;
+
+  margin-bottom: 25px;
+}
+
+.letterCard p {
+  font-size: 18px;
+
+  line-height: 2;
+
+  color: #555;
+}
+
+#continueBtn {
+  margin-top: 35px;
+
+  background: #ff2d75;
+
+  color: white;
+}
+
+/* ==========================================
+            DATE PLANNER
+========================================== */
+
+#dateSection {
+  background: rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(10px);
+}
+
+.dateCard {
+  width: 90%;
+
+  max-width: 650px;
+
+  background: white;
+
+  color: #444;
+
+  padding: 40px;
+
+  border-radius: 30px;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+
+  text-align: center;
+
+  animation: popUp 0.8s;
+}
+
+.dateCard h1 {
+  color: #ff2d75;
+
+  font-family: "Great Vibes", cursive;
+
+  font-size: 3rem;
+}
+
+.dateCard ul {
+  list-style: none;
+
+  margin: 30px 0;
+}
+
+.dateCard li {
+  margin: 18px 0;
+
+  font-size: 20px;
+
+  transition: 0.3s;
+}
+
+.dateCard li:hover {
+  transform: translateX(10px);
+
+  color: #ff2d75;
+}
+
+#galleryBtn {
+  background: #ff2d75;
+
+  color: white;
+}
+
+/* ==========================================
+            GALLERY
+========================================== */
+
+#gallerySection {
+  background: linear-gradient(135deg, #ffd8e5, #ffc1d3);
+}
+
+#gallerySection h1 {
+  margin-bottom: 40px;
+
+  font-size: 3rem;
+
+  color: white;
+
+  font-family: "Great Vibes", cursive;
+}
+
+.gallery {
+  display: grid;
+
+  grid-template-columns: repeat(2, 250px);
+
+  gap: 25px;
+}
+
+.galleryImg {
+  width: 250px;
+
+  height: 250px;
+
+  object-fit: cover;
+
+  border-radius: 25px;
+
+  border: 5px solid white;
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+
+  transition: 0.5s;
+}
+
+.galleryImg:hover {
+  transform: scale(1.08) rotate(3deg);
+}
+
+#endingBtn {
+  margin-top: 35px;
+
+  background: #ff2d75;
+
+  color: white;
+}
+
+/* ==========================================
+            ENDING
+========================================== */
+
+#endingSection {
+  background: linear-gradient(135deg, #ff8eb6, #ff4f8d);
+}
+
+.endingCard {
+  text-align: center;
+}
+
+.endingImage {
+  width: 350px;
+
+  border-radius: 30px;
+
+  border: 6px solid white;
+
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+}
+
+.endingCard h1 {
+  margin-top: 25px;
+
+  font-size: 3.2rem;
+
+  font-family: "Great Vibes", cursive;
+}
+
+.endingCard p {
+  margin-top: 20px;
+
+  font-size: 20px;
+
+  line-height: 1.8;
+}
+
+/* ==========================================
+            POPUP ANIMATION
+========================================== */
+
+@keyframes popUp {
+  from {
+    opacity: 0;
+
+    transform: scale(0.7);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+}
+/* ==========================================
+            SPARKLES
+========================================== */
+
+#sparkleContainer {
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  overflow: hidden;
+
+  z-index: 999;
+}
+
+.sparkle {
+  position: absolute;
+
+  font-size: 25px;
+
+  animation: sparkle 1.2s linear forwards;
+}
+
+@keyframes sparkle {
+  0% {
+    transform: scale(0.2);
+
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-150px) scale(2);
+
+    opacity: 0;
+  }
+}
+
+/* ==========================================
+            FIREWORK CANVAS
+========================================== */
+
+#fireworksCanvas {
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: 998;
+}
+
+/* ==========================================
+            IMAGE ANIMATIONS
+========================================== */
+
+.zoomIn {
+  animation: zoomIn 1.2s forwards;
+}
+
+.zoomOut {
+  animation: zoomOut 0.8s forwards;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.4);
+
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+
+    opacity: 1;
+  }
+}
+
+@keyframes zoomOut {
+  from {
+    transform: scale(1);
+
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(0.7);
+
+    opacity: 0;
+  }
+}
+
+/* ==========================================
+            GLOW
+========================================== */
+
+.glow {
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    filter: drop-shadow(0 0 10px hotpink);
+  }
+
+  to {
+    filter: drop-shadow(0 0 35px deeppink);
+  }
+}
+
+/* ==========================================
+            BUTTON HOVER
+========================================== */
+
+button:hover {
+  box-shadow: 0 0 30px hotpink;
+}
+
+/* ==========================================
+            SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff2d75;
+
+  border-radius: 20px;
+}
+
+/* ==========================================
+            MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+  .glassCard {
+    width: 95%;
+
+    padding: 25px;
+  }
+
+  .glassCard h1 {
+    font-size: 2.3rem;
+  }
+
+  .glassCard h2 {
+    font-size: 1.4rem;
+  }
+
+  .proposalImage {
+    width: 220px;
+  }
+
+  #me,
+  #barasha {
+    width: 140px;
+
+    height: 140px;
+  }
+
+  #together {
+    width: 240px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .galleryImg {
+    width: 230px;
+
+    height: 230px;
+  }
+
+  .endingImage {
+    width: 240px;
+  }
+
+  .buttons {
+    flex-direction: column;
+
+    gap: 20px;
+  }
+}
+
+/* ==========================================
+            SMOOTH TRANSITIONS
+========================================== */
+
+section {
+  transition: all 0.8s ease;
+}
+
+img {
+  user-select: none;
+
+  -webkit-user-drag: none;
+}
+
+body {
+  cursor: default;
+}
+@keyframes collideReveal {
+  0% {
+    opacity: 0;
+
+    transform: translate(-50%, -50%) scale(0.1);
+  }
+
+  20% {
+    opacity: 1;
+
+    transform: translate(-50%, -50%) scale(1.6);
+  }
+
+  40% {
+    transform: translate(-50%, -50%) scale(1.25);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform: translate(-50%, -50%) scale(7);
+  }
+}
+
+@keyframes disappear {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.collideAnimation {
+  animation: collideReveal 5s ease forwards;
+}
+
+.disappear {
+  animation: disappear 1s forwards;
+}

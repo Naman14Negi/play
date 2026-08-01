@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>For My Beautiful Barasha ❤️</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+  </head>
+
+  <body>
+    <!-- Floating Hearts -->
+
+    <div id="heartContainer"></div>
+
+    <!-- MUSIC -->
+
+    <audio id="perfectMusic" loop>
+      <source src="music/perfect.mp3" type="audio/mpeg" />
+    </audio>
+
+    <audio id="introMusic">
+      <source src="music/intro.mp3" type="audio/mpeg" />
+    </audio>
+
+    <audio id="collideMusic" loop>
+      <source src="music/collide.mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- ===============================
+            PROPOSAL PAGE
+    ================================= -->
+
+    <section id="proposalPage">
+      <div class="glassCard">
+        <h1>Hi Barasha ❤️</h1>
+
+        <p>Every moment with you feels magical.</p>
+
+        <img src="images/couple1.jpeg" class="proposalImage" alt="Couple" />
+
+        <h2>Will you go on another beautiful date with me? 🥹❤️</h2>
+
+        <div class="buttons">
+          <button id="yesBtn">YES ❤️</button>
+
+          <button id="noBtn">NO 😅</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===============================
+            INTRO ANIMATION
+    ================================= -->
+
+    <section id="introScene">
+      <img src="images/me.jpeg" id="me" alt="Me" />
+
+      <div id="collisionHeart">❤️</div>
+
+      <img src="images/barasha.jpeg" id="barasha" alt="Barasha" />
+    </section>
+
+    <!-- ===============================
+            TOGETHER SCENE
+    ================================= -->
+
+    <section id="togetherScene">
+      <img src="images/together.jpeg" id="together" alt="Together" />
+
+      <h1>Every Love Story Is Beautiful,</h1>
+
+      <h2>But Ours Is My Favourite ❤️</h2>
+    </section>
+    <!-- ===============================
+            LOVE LETTER
+    ================================= -->
+
+    <section id="letterSection">
+      <div class="letterCard">
+        <h1>Dear Barasha ❤️</h1>
+
+        <p id="letterText">
+          Every day with you becomes a memory worth keeping.<br /><br />
+
+          You make ordinary moments feel magical.<br /><br />
+
+          Thank you for loving me.<br /><br />
+
+          Thank you for choosing me.<br /><br />
+
+          Thank you for making my life beautiful.<br /><br />
+
+          I don't know what tomorrow holds, but I know I want you beside me.
+          Let's continue making beautiful memories together. ❤️
+        </p>
+
+        <button id="continueBtn">Continue ❤️</button>
+      </div>
+    </section>
+
+    <!-- ===============================
+            DATE PLANNER
+    ================================= -->
+
+    <section id="dateSection">
+      <div class="dateCard">
+        <h1>Our Next Date ❤️</h1>
+
+        <ul>
+          <li>🍕 Dinner Together</li>
+
+          <li>🎬 Movie Night</li>
+
+          <li>🍦 Ice Cream</li>
+
+          <li>🚗 Long Drive</li>
+
+          <li>🌃 Night Walk</li>
+
+          <li>📸 Lots of Pictures</li>
+
+          <li>❤️ Endless Conversations</li>
+        </ul>
+
+        <button id="galleryBtn">Our Memories 📸</button>
+      </div>
+    </section>
+
+    <!-- ===============================
+            GALLERY
+    ================================= -->
+
+    <section id="gallerySection">
+      <h1>Our Beautiful Memories ❤️</h1>
+
+      <div class="gallery">
+        <img src="images/barasha1.jpeg" class="galleryImg" />
+
+        <img src="images/barasha2.jpeg" class="galleryImg" />
+
+        <img src="images/barasha3.jpeg" class="galleryImg" />
+
+        <img src="images/barasha4.jpeg" class="galleryImg" />
+      </div>
+
+      <button id="endingBtn">One Last Thing ❤️</button>
+    </section>
+
+    <!-- ===============================
+            ENDING
+    ================================= -->
+
+    <section id="endingSection">
+      <div class="endingCard">
+        <img src="images/together.jpeg" class="endingImage" alt="Together" />
+
+        <h1>Thank You ❤️</h1>
+
+        <p>
+          Thank you for making my life brighter, happier, and more beautiful
+          every single day. I Love You Forever ❤️
+        </p>
+      </div>
+    </section>
+
+    <!-- Floating Sparkles -->
+
+    <div id="sparkleContainer"></div>
+
+    <!-- Fireworks Canvas -->
+
+    <canvas id="fireworksCanvas"></canvas>
+
+    <script src="script.js"></script>
+  </body>
+</html>
