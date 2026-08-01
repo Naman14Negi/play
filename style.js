@@ -145,6 +145,17 @@ function createHeart() {
 
 // Create a heart every 500ms
 setInterval(createHeart, 500);
+// Replay Barasha images popup animation
+
+window.addEventListener("load", () => {
+  const images = document.querySelectorAll(".barasha-img");
+
+  images.forEach((img) => {
+    img.addEventListener("animationend", () => {
+      img.remove();
+    });
+  });
+});
 
 // ===============================
 // FLOATING PHOTO BUBBLES

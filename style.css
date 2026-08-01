@@ -912,3 +912,67 @@ body {
 .disappear {
   animation: disappear 1s forwards;
 }
+.barasha-pop-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.barasha-img {
+  position: absolute;
+  bottom: -150px;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  animation: riseUp 5s ease-in-out forwards;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.img1 {
+  left: 10%;
+  animation-delay: 0.5s;
+}
+
+.img2 {
+  left: 35%;
+  animation-delay: 1.5s;
+}
+
+.img3 {
+  left: 60%;
+  animation-delay: 2.5s;
+}
+
+.img4 {
+  left: 80%;
+  animation-delay: 3.5s;
+}
+
+@keyframes riseUp {
+  0% {
+    bottom: -150px;
+    opacity: 0;
+    transform: scale(0.5) rotate(-20deg);
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  70% {
+    bottom: 60%;
+    transform: scale(1) rotate(10deg);
+  }
+
+  100% {
+    bottom: 110%;
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
